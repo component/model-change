@@ -1,0 +1,9 @@
+{
+  "name": "hades-change",
+  "description": "A plugin that adds change events to hades models.",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "clone-component": "*"
+  }
+}
