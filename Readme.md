@@ -1,7 +1,7 @@
 
 # hades-change
 
-  A plugin that adds change events to hades models.
+  A plugin that adds change events to Hades models.
 
 ## Installation
 
