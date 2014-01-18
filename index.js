@@ -41,25 +41,26 @@ function change (options) {
      * @return {Model}
      */
 
+    var factory = Model.attr;
     Model.attr = function (attr, options) {
-      options = options || {};
-      Model.attrs[attr] = options;
+      var ret = factory.apply(this, arguments);
+      var method = Model.prototype[attr];
 
       /**
        * Get or set a `val` and emit change events.
        *
-       * @param {Mixed} val
+       * @param {Mixed} val (optional)
        * @return {Mixed}
        */
 
       Model.prototype[attr] = function (val) {
-        if (!arguments.length) return this.attrs[attr];
-        var prev = this[attr]();
+        if (!arguments.length) return method.apply(this);
+        var prev = this.attrs[attr];
+        method.apply(this, arguments);
         if (prev == val) return this;
 
         this._dirty = this._dirty || {};
         this._dirty[attr] = true;
-        this.attrs[attr] = val;
         this.Model.emit('change', this, attr, val, prev);
         this.Model.emit('change' + separator + attr, this, val, prev);
         this.emit('change', attr, val, prev);
