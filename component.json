@@ -1,6 +1,6 @@
 {
-  "name": "hades-change",
-  "description": "A plugin that adds change events to Hades models.",
+  "name": "model-change",
+  "description": "A plugin that adds change events to models.",
   "version": "0.0.1",
   "license": "MIT",
   "scripts": [
@@ -11,7 +11,6 @@
   },
   "development": {
     "component/assert": "*",
-    "segmentio/hades": "*"
-  },
-  "remotes": []
+    "component/model": "*"
+  }
 }

@@ -1,24 +1,23 @@
 
-# hades-change
+# model-change
 
-  A plugin that adds change events to Hades models.
+  A plugin that adds change events to models.
 
 ## Installation
 
-    $ npm install segmentio/hades-change
-    $ component install segmentio/hades-change
+    $ component install component/model-change
 
 ## Example
 
 ```js
-var hades = require('hades');
-var change = require('hades-change');
+var model = require('model');
+var change = require('model-change');
 
 /**
  * User model.
  */
 
-var User = hades()
+var User = model()
   .use(change())
   .attr('id')
   .attr('name');
