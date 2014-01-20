@@ -61,4 +61,4 @@ model.emit('change<separator><attr>', val, prev);
 
   Check whether an `attr` has changed since the last save.
 
-  When on `attr` is passed, the method either returns a dictionary of all the attributes that have changed, or `false` if none have changed.
+  When no `attr` is passed, the method either returns a dictionary of all the attributes that have changed, or `false` if none have changed.
